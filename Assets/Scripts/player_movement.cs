@@ -14,6 +14,7 @@ public class player_movement : MonoBehaviour
     private CharacterController C_Controller;
     private Vector3 moveDir = Vector3.zero;
     private float yaw = 0.0f;
+    private float pitch = 0.0f;
 
     // Start is called before the first frame update
     void Start()
