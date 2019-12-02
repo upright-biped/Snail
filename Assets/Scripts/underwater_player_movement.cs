@@ -5,8 +5,8 @@ using UnityEngine;
 public class underwater_player_movement : MonoBehaviour
 {
     public float speed = 7.0f;
-    public float jumpSpeed = 15.0f;
-    public float gravity = 4.0f;
+    public float jumpSpeed = 9.0f;
+    public float gravity = 6.0f;
     public Camera playerCamera;
     public float lookSpeed = 3.0F;
 

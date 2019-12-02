@@ -489,9 +489,9 @@ GameObject:
   - component: {fileID: 705660800}
   - component: {fileID: 705660799}
   - component: {fileID: 705660798}
-  - component: {fileID: 705660803}
   - component: {fileID: 705660804}
   - component: {fileID: 705660802}
+  - component: {fileID: 705660803}
   m_Layer: 0
   m_Name: Player Model Goes Here
   m_TagString: Untagged
@@ -603,8 +603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jumpSpeed: 15
-  gravity: 4
+  jumpSpeed: 9
+  gravity: 6
   playerCamera: {fileID: 963194227}
   lookSpeed: 3
   canMove: 1
