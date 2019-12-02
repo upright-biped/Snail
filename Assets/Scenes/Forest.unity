@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 639362506}
   - component: {fileID: 639362505}
   m_Layer: 0
-  m_Name: ForrestFloor
+  m_Name: ForestFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
