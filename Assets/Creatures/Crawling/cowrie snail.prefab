@@ -124,5 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc04cc9ff9cd184f968305554e5f84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Waypoints: []
-  speed: 0.3
+  speed: 5

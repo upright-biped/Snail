@@ -11,10 +11,11 @@ public class Spawning : MonoBehaviour
     int randCreature;
     bool stop = false;
 
-    public float height;
-    public float xPoint;
-    public float yPoint;
-    public float zPoint;
+    float height;
+    float xPoint;
+    float yPoint;
+    float zPoint;
+    Vector3 spawnPosition;
     void Start()
     {
         StartCoroutine(WaitSpawner());
@@ -45,8 +46,8 @@ public class Spawning : MonoBehaviour
             //choose random cooridnates
             xPoint = Random.Range(playerLocation.x - 20, playerLocation.x + 20);
             zPoint = Random.Range(playerLocation.z - 20, playerLocation.z + 20);
-            yPoint = height+1;
-            Vector3 spawnPosition = new Vector3(xPoint, yPoint, zPoint);
+            yPoint = height;
+            spawnPosition = new Vector3(xPoint, yPoint, zPoint);
 
             Instantiate(species[randCreature], spawnPosition, gameObject.transform.rotation);
 
