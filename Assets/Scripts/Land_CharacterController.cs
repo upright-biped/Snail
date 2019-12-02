@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Land_CharacterController : MonoBehaviour
 {
-    public float speed = 3.5f;
+    public float speed = 10.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 9.0f;
     public Camera playerCamera;

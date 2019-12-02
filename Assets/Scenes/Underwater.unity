@@ -602,11 +602,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93553a22b1cf87346a3096a4dbce6e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 4
-  Gravity: 9
-  RotationSpeed: 3
-  JumpSpeed: 8
-  RunSpeed: 25
+  speed: 7
+  jumpSpeed: 15
+  gravity: 4
+  playerCamera: {fileID: 963194227}
+  lookSpeed: 3
+  canMove: 1
 --- !u!143 &705660804
 CharacterController:
   m_ObjectHideFlags: 0

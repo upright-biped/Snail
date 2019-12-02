@@ -4,55 +4,57 @@ using UnityEngine;
 
 public class underwater_player_movement : MonoBehaviour
 {
+    public float speed = 7.0f;
+    public float jumpSpeed = 15.0f;
+    public float gravity = 4.0f;
+    public Camera playerCamera;
+    public float lookSpeed = 3.0F;
 
-    public float Speed = 5.0f;
-    public float Gravity = 1f;
-    public float RotationSpeed = 7.0f;
-    public float JumpSpeed = 1.0f;
-    public float RunSpeed = 5.0f;
+    CharacterController characterController;
+    Vector3 moveDirection = Vector3.zero;
+    Vector2 rotation = Vector2.zero;
 
-    private CharacterController C_Controller;
-    private Vector3 moveDir = Vector3.zero;
-    private float yaw = 0.0f;
-    private float pitch = 0.0f;
+    [HideInInspector]
+    public bool canMove = true;
 
-    // Start is called before the first frame update
     void Start()
     {
-        C_Controller = GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (C_Controller.isGrounded && Input.GetKey(KeyCode.LeftShift))
+        if (characterController.isGrounded)
         {
-            moveDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            moveDir = transform.TransformDirection(moveDir);
-            moveDir *= RunSpeed;
+            // We are grounded, so recalculate move direction based on axes
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 right = transform.TransformDirection(Vector3.right);
+            float curSpeedX = speed * Input.GetAxis("Vertical");
+            float curSpeedY = speed * Input.GetAxis("Horizontal");
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
             if (Input.GetButton("Jump"))
             {
-                moveDir.y = JumpSpeed;
+                moveDirection.y = jumpSpeed;
             }
         }
-        
-        if (C_Controller.isGrounded && !Input.GetKey(KeyCode.LeftShift))
+
+        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
+        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
+        // as an acceleration (ms^-2)
+        moveDirection.y -= gravity * Time.deltaTime;
+
+        // Move the controller
+        characterController.Move(moveDirection * Time.deltaTime);
+
+        // Player and Camera rotation
+        if (canMove)
         {
-            moveDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            moveDir = transform.TransformDirection(moveDir);
-            moveDir *= Speed;
-
-            if (Input.GetButton("Jump"))
-            {
-                moveDir.y = JumpSpeed;
-            }
+            rotation.y += Input.GetAxis("Mouse X");
+            rotation.x += -Input.GetAxis("Mouse Y");
+            rotation.x = Mathf.Clamp(rotation.x, -20f, 20f);
+            transform.eulerAngles = new Vector2(0, rotation.y) * lookSpeed;
+            playerCamera.transform.localRotation = Quaternion.Euler(rotation.x * lookSpeed, 0, 0);
         }
-
-        moveDir.y -= Gravity * Time.deltaTime;
-        C_Controller.Move(moveDir * Time.deltaTime);
-
-        yaw = RotationSpeed * Input.GetAxis("Mouse X");
-        transform.Rotate(new Vector3(0.0f, yaw, 0.0f), Space.World);
     }
 }
