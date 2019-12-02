@@ -5,11 +5,11 @@ using UnityEngine;
 public class player_movement : MonoBehaviour
 {
 
-    public float Speed = 7.0f;
-    public float Gravity = 7.0f;
+    public float Speed = 5.0f;
+    public float Gravity = 1f;
     public float RotationSpeed = 7.0f;
-    public float JumpSpeed = 8.0f;
-    public float RunSpeed = 14.0f;
+    public float JumpSpeed = 1.0f;
+    public float RunSpeed = 5.0f;
 
     private CharacterController C_Controller;
     private Vector3 moveDir = Vector3.zero;
