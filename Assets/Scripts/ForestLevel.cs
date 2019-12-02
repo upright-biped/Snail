@@ -11,4 +11,14 @@ public class ForestLevel : MonoBehaviour
         // SceneManager.LoadScene(scenePaths[0], LoadSceneMode.Single);
         SceneManager.LoadScene("Forest");
     }
+    public void WaterPlay()
+    {
+        // SceneManager.LoadScene(scenePaths[0], LoadSceneMode.Single);
+        SceneManager.LoadScene("Underwater");
+    }
+    public void QuitPlay ()
+    {
+        Debug.Log("QUIT!");
+        Application.Quit();
+    }
 }
