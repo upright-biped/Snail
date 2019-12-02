@@ -937,8 +937,8 @@ GameObject:
   - component: {fileID: 1432874823}
   - component: {fileID: 1432874822}
   - component: {fileID: 1432874821}
-  - component: {fileID: 1432874820}
   - component: {fileID: 1432874819}
+  - component: {fileID: 1432874820}
   m_Layer: 0
   m_Name: Player Model Goes Here
   m_TagString: Untagged
@@ -973,14 +973,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1432874818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93553a22b1cf87346a3096a4dbce6e25, type: 3}
+  m_Script: {fileID: 11500000, guid: 89e3f77da1179e342aef0150490aee7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 4
-  Gravity: 9
-  RotationSpeed: 3
-  JumpSpeed: 8
-  RunSpeed: 25
+  speed: 3.5
+  jumpSpeed: 8
+  gravity: 9
+  playerCamera: {fileID: 318037490}
+  lookSpeed: 3
+  canMove: 1
 --- !u!136 &1432874821
 CapsuleCollider:
   m_ObjectHideFlags: 0
