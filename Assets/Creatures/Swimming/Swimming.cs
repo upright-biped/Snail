@@ -61,9 +61,9 @@ public class Swimming : MonoBehaviour
 
         //flipping depending on if going to players right or left
         if (Vector3.SignedAngle(player.transform.position, transform.position - newLocation, Vector3.up) < 0)
-        { GetComponent<SpriteRenderer>().flipX = false; }
-        else
         { GetComponent<SpriteRenderer>().flipX = true; }
+        else
+        { GetComponent<SpriteRenderer>().flipX = false; }
 
     }
     void OnMouseDown()
