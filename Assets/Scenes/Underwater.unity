@@ -730,9 +730,6 @@ MonoBehaviour:
   gravity: 6
   playerCamera: {fileID: 963194227}
   lookSpeed: 3
-  characterController: {fileID: 0}
-  moveDirection: {x: 0, y: 0, z: 0}
-  rotation: {x: 0, y: 0}
   canMove: 1
 --- !u!143 &705660804
 CharacterController:
