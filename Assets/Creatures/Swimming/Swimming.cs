@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Swimming : MonoBehaviour
 {
     GameObject player;
     Spawning spawnScript;
     float dist;
 
+    public float poison;
 
     public float speed; //each species has a different speed
     float xTilt;
@@ -71,7 +72,10 @@ public class Swimming : MonoBehaviour
         if (dist < 4)
         {
             //add to inventory and score
-
+            if (poison<0)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
             spawnScript.count--;
             Destroy(gameObject);
             Destroy(this);

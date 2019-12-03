@@ -6,7 +6,7 @@ public class Crawling : MonoBehaviour
     GameObject player;
     Spawning spawnScript;
     float dist;
-
+    GameObject score;
 
     public float speed; //each species has a different speed
     float xTilt;
@@ -21,6 +21,8 @@ public class Crawling : MonoBehaviour
 
     void Start()
     {
+        score = GameObject.Find("Text");
+
         player = GameObject.Find("SpawnCenter");
         spawnScript = player.GetComponent<Spawning>();
         height = GetComponent<SphereCollider>().radius;
@@ -70,8 +72,8 @@ public class Crawling : MonoBehaviour
         if (dist < 4)
         {
             //add to inventory
-
             spawnScript.count--;
+            score.GetComponent<Score>().AddScore();
             Destroy(gameObject);
             Destroy(this);
         }
