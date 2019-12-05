@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 public class Crawling : MonoBehaviour
 {
     GameObject player;
@@ -69,6 +70,7 @@ public class Crawling : MonoBehaviour
         if (dist < 4)
         {
             //add to inventory
+            //if we could put code here that enables the image for the respective slot for the given object to object slot.
             spawnScript.count--;
             score.GetComponent<Score>().AddScore();
             Destroy(gameObject);

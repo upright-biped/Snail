@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Creatures
   - Terrain
+  - arrow crab
   layers:
   - Default
   - TransparentFX
