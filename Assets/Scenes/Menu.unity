@@ -586,7 +586,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1467470240}
-        m_MethodName: QuitGame
+        m_MethodName: Tutorials
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1454,9 +1454,9 @@ MonoBehaviour:
     be moved to look under/inside. Creatue species have their own sets of behaviors
     and places they can be found. Creatures can be exchanged for HP which can be used
     to find rarer creatures in the environment. Some creatures can decrease HP, so
-    watch your health!\n\n\n\n\n\n\n\nThings to collect:\nEach creatures will worth
-    500 points. \nAt 2500 points you will be able to advance into the next level or
-    you can press ESC to skip to the next level\n"
+    watch your health!\n\nPRESS ESC TO RETURN TO MAIN MENU!\n\n\n\n\n\nThings to collect:\nEach
+    creatures will worth 500 points. \nAt 2500 points you will be able to advance
+    into the next level or you can press ESC to skip to the next level\n"
 --- !u!222 &1310247919
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1476,7 +1476,7 @@ GameObject:
   - component: {fileID: 1467470239}
   - component: {fileID: 1467470240}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: MainMenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
