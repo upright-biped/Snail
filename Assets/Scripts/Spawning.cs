@@ -1,12 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawning : MonoBehaviour
 {
     public int count;
     public GameObject[] species;
-    public int lastSea;
     Vector3 playerLocation;
     int randCreature;
     bool stop = false;
@@ -16,6 +14,7 @@ public class Spawning : MonoBehaviour
     float yPoint;
     float zPoint;
     Vector3 spawnPosition;
+//Alex Murray
     void Start()
     {
         StartCoroutine(WaitSpawner());
@@ -32,14 +31,8 @@ public class Spawning : MonoBehaviour
         while (!stop)
         {
             //choose creature to spawn
-            if (GameObject.Find("Sea Floor")==true)
-            {
-                randCreature = Random.Range(0, lastSea);
-            }
-            else
-            {
-                randCreature = Random.Range(lastSea, species.Length);
-            }
+            randCreature = Random.Range(0, species.Length);
+            
 
             //get radius of that species
             height = species[randCreature].GetComponent<SphereCollider>().radius;
