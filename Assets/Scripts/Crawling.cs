@@ -41,8 +41,7 @@ public class Crawling : MonoBehaviour
             Destroy(this);
         }
 
-        //moving to random points
-        //collision
+        //moving to random points until almost there or collided with object
         if (collided == true || Vector3.Distance(transform.position, newLocation) < 1)
         {
             xPoint = Random.Range(player.transform.position.x - 20, player.transform.position.x + 20);

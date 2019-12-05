@@ -46,8 +46,8 @@ public class Spawning : MonoBehaviour
 
             count++;
             yield return new WaitForSeconds(5);
-            //pauses script if 12 or more creatures are instantiated
-            while(count>12)
+            //pauses script if 12 or more creatures are instantiated, including released creatures
+            while(count>11)
             {
                 yield return new WaitForSeconds(1);
             }
