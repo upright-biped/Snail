@@ -1,14 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-public class Swimming : MonoBehaviour
+﻿using UnityEngine;
+public class Crawling : MonoBehaviour
 {
     GameObject player;
     Spawning spawnScript;
     float dist;
-
-    public float poison;
+    GameObject score;
 
     public float speed; //each species has a different speed
     float xTilt;
@@ -16,14 +12,15 @@ public class Swimming : MonoBehaviour
     float zTilt = 1;
     float height;
     float xPoint;
-    float yPoint;
     float zPoint;
     public Vector3 newLocation;
     bool stop = false;
     bool collided = false;
-
+//Alex Murray
     void Start()
     {
+        score = GameObject.Find("Text");
+
         player = GameObject.Find("SpawnCenter");
         spawnScript = player.GetComponent<Spawning>();
         height = GetComponent<SphereCollider>().radius;
@@ -45,19 +42,20 @@ public class Swimming : MonoBehaviour
         }
 
         //moving to random points
+        //collision
         if (collided == true || Vector3.Distance(transform.position, newLocation) < 1)
         {
             xPoint = Random.Range(player.transform.position.x - 20, player.transform.position.x + 20);
-            yPoint = Random.Range(height, 5);
             zPoint = Random.Range(player.transform.position.z - 20, player.transform.position.z + 20);
-            newLocation = new Vector3(xPoint, yPoint, zPoint);
+            newLocation = new Vector3(xPoint, height, zPoint);
             collided = false;
         }
         transform.position = Vector3.MoveTowards(transform.position, newLocation, speed);
         //tilting to look like crawling, and facing player
+        if (transform.localEulerAngles.z > 10 || transform.localEulerAngles.z < -30)
+        { zTilt *= (-1); }
         xTilt = GameObject.Find("SpawnCenter").transform.eulerAngles.x - transform.eulerAngles.x;
         yTilt = GameObject.Find("SpawnCenter").transform.eulerAngles.y - transform.eulerAngles.y;
-        zTilt = GameObject.Find("SpawnCenter").transform.eulerAngles.z - transform.eulerAngles.z;
         transform.Rotate(xTilt, yTilt, zTilt, Space.Self);
 
         //flipping depending on if going to players right or left
@@ -71,22 +69,19 @@ public class Swimming : MonoBehaviour
     {
         if (dist < 4)
         {
-            //add to inventory and score
-            if (poison<0)
-            {
-                SceneManager.LoadScene("GameOver");
-            }
+            //add to inventory
             spawnScript.count--;
+            score.GetComponent<Score>().AddScore();
             Destroy(gameObject);
             Destroy(this);
         }
     }
-    
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "terrain")
+        if (other.tag!= "Terrain")
         {
             collided = true;
         }
     }
 }
+
