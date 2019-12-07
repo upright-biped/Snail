@@ -6,6 +6,7 @@ public class Crawling : MonoBehaviour
     Spawning spawnScript;
     float dist;
     GameObject score;
+    GameObject inventory;
 
     public float speed; //each species has a different speed
     float xTilt;
@@ -20,7 +21,8 @@ public class Crawling : MonoBehaviour
 //Alex Murray
     void Start()
     {
-        score = GameObject.Find("Text");
+        score = GameObject.Find("Score");
+        inventory = GameObject.Find("Inventory/" + this.name);
 
         player = GameObject.Find("SpawnCenter");
         spawnScript = player.GetComponent<Spawning>();
@@ -69,10 +71,12 @@ public class Crawling : MonoBehaviour
     {
         if (dist < 4)
         {
-            //add to inventory
-            //if we could put code here that enables the image for the respective slot for the given object to object slot.
+            //call caught function
+            inventory.GetComponent<Slot>().Caught();
+            //decrease count
             spawnScript.count--;
             score.GetComponent<Score>().AddScore();
+
             Destroy(gameObject);
             Destroy(this);
         }

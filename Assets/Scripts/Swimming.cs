@@ -4,11 +4,15 @@ public class Swimming : MonoBehaviour
 {
     GameObject player;
     Spawning spawnScript;
+    GameObject score;
+    Slot inventory;
+
     float dist;
-
-    public float poison;
-
     public float speed; //each species has a different speed
+    public string path;
+    bool stop = false;
+    bool collided = false;
+
     float xTilt;
     float yTilt;
     float zTilt = 1;
@@ -17,11 +21,13 @@ public class Swimming : MonoBehaviour
     float yPoint;
     float zPoint;
     public Vector3 newLocation;
-    bool stop = false;
-    bool collided = false;
 //Alex Murray
     void Start()
     {
+        score = GameObject.Find("Score");
+        path = "Inventory/" + this.name;
+        inventory = GameObject.Find(path).GetComponent<Slot>();
+
         player = GameObject.Find("SpawnCenter");
         spawnScript = player.GetComponent<Spawning>();
         height = GetComponent<SphereCollider>().radius;
@@ -69,12 +75,12 @@ public class Swimming : MonoBehaviour
     {
         if (dist < 4)
         {
-            //add to inventory and score
-            if (poison<0)
-            {
-                SceneManager.LoadScene("GameOver");
-            }
+
+            //call caught function
+            inventory.Caught();
+            //decrease count
             spawnScript.count--;
+            score.GetComponent<Score>().AddScore();
             Destroy(gameObject);
             Destroy(this);
         }

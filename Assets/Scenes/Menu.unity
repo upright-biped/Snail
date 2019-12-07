@@ -325,7 +325,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 534822934}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 406988265}
   - component: {fileID: 406988264}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 446185192}
   - component: {fileID: 446185191}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -636,88 +636,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446185189}
   m_CullTransparentMesh: 0
---- !u!1 &519241083
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 519241084}
-  - component: {fileID: 519241086}
-  - component: {fileID: 519241085}
-  m_Layer: 5
-  m_Name: Avoid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &519241084
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519241083}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 534822934}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 404.2, y: -403.5}
-  m_SizeDelta: {x: 590.1, y: 318.9}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &519241085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519241083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Thing to avoid: The razor fish!
-
-    By collecting this creature, you will be poisoned and get loaded into the game
-    over scence.'
---- !u!222 &519241086
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519241083}
-  m_CullTransparentMesh: 0
 --- !u!1 &534822933
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +661,7 @@ RectTransform:
   m_GameObject: {fileID: 534822933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -37.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1310247917}
   - {fileID: 725460795}
@@ -751,14 +669,13 @@ RectTransform:
   - {fileID: 2023435549}
   - {fileID: 1812792821}
   - {fileID: 86143918}
-  - {fileID: 519241084}
   - {fileID: 292960260}
   m_Father: {fileID: 696724595}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -260.3, y: 127}
+  m_AnchoredPosition: {x: -36, y: 87}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &566437896
@@ -1259,7 +1176,7 @@ GameObject:
   - component: {fileID: 1254973312}
   - component: {fileID: 1254973311}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Tutorials
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1449,14 +1366,20 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A peaceful world with a couple biomes, filled with unique creatures you
-    can search for and catch. Objects in the environment like branches and rocks can
-    be moved to look under/inside. Creatue species have their own sets of behaviors
-    and places they can be found. Creatures can be exchanged for HP which can be used
-    to find rarer creatures in the environment. Some creatures can decrease HP, so
-    watch your health!\n\nPRESS ESC TO RETURN TO MAIN MENU!\n\n\n\n\n\nThings to collect:\nEach
-    creatures will worth 500 points. \nAt 2500 points you will be able to advance
-    into the next level or you can press ESC to skip to the next level\n"
+  m_Text: 'Esc - quit
+
+    WASD/arrows - move
+
+    Spacebar - jump
+
+    Click - catch
+
+    Left click inventory - release
+
+    Right click inventory - delete
+
+
+    Discover all the species! Be careful what you eat and don''t get shocked!'
 --- !u!222 &1310247919
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1476,7 +1399,7 @@ GameObject:
   - component: {fileID: 1467470239}
   - component: {fileID: 1467470240}
   m_Layer: 5
-  m_Name: MainMenuCanvas
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
