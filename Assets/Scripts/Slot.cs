@@ -21,7 +21,6 @@ public class Slot : MonoBehaviour
     public void Caught()
     {
         //revert image colors
-<<<<<<< HEAD
         if (Icon.color == Color.blue)
         {
             GameObject.Find("Score").GetComponent<Score>().AddSpecies();
@@ -41,13 +40,6 @@ public class Slot : MonoBehaviour
             countInt--;
             Count.text = countInt.ToString();
         }
-=======
-        if (Icon.GetComponent<Image>().color == Color.blue)
-        {
-            GameObject.Find("Score").GetComponent<Score>().AddSpecies();
-        }
-        Icon.GetComponent<Image>().color = Color.white;
->>>>>>> 3135284dbf841277c93ac3ebb14afc667fa44169
 
         //when right clicked, delete
         if (Input.GetMouseButtonDown(1) && countInt>0)
