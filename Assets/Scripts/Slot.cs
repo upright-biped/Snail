@@ -5,28 +5,55 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    GameObject Icon;
-    GameObject Count;
-    GameObject Name;
-
+    public GameObject spawnObject;
+    Vector3 Location;
+    Image Icon;
+    Text Name;
+    Text Count;
+    int countInt;
+//Alex Murray
     void Start()
     {
-        Icon = GameObject.Find(this.name+"/icon");
-        Count = GameObject.Find(this.name + "/count");
-        Name = GameObject.Find(this.name + "/Text");
-
-
-        //when moused over, show text
-        //when left clicked, release
-
-        //when right clicked, delete
+        Icon = GameObject.Find(this.name+"/icon").GetComponent<Image>();
+        Count = GameObject.Find(this.name + "/count").GetComponent<Text>();
+        Name = GameObject.Find(this.name + "/Text").GetComponent<Text>();
     }
-
     public void Caught()
     {
         //revert image colors
-        Icon.GetComponent<Image>().color = Color.white;
+        if (Icon.color == Color.blue)
+        {
+            GameObject.Find("Score").GetComponent<Score>().AddSpecies();
+            Icon.color = Color.white;
+        }
+        countInt++;
+        Count.text = countInt.ToString();
+    }
+    void OnMouseDown()
+    {
+        //when left clicked, release
+        if (Input.GetMouseButtonDown(0) && countInt > 0)
+        {
+            Location = GameObject.Find("SpawnCenter").transform.position;
+            Location.x++;
+            Instantiate(spawnObject, Location, gameObject.transform.rotation);
+            countInt--;
+            Count.text = countInt.ToString();
+        }
 
-        //Count.GetComponent<Text>().text = int.Parse(Count.GetComponent<Text>().text);
+        //when right clicked, delete
+        if (Input.GetMouseButtonDown(1) && countInt>0)
+        {
+            countInt--;
+            Count.text = countInt.ToString();
+        }
+    }
+    void OnMouseOver()
+    {
+        Name.enabled = true;
+    }
+    void OnMouseExit()
+    {
+        Name.enabled = false;
     }
 }
