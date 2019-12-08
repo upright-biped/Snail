@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -22,7 +23,12 @@ public class Score : MonoBehaviour
         
             // add 500 points to score
             score += 500;
-        
+        /*if (score == 3000)
+        { 
+                // SceneManager.LoadScene(scenePaths[0], LoadSceneMode.Single);
+                SceneManager.LoadScene("Forest");
+            
+        }*/
         // update text of Text element
         thisText.text = "SCORE: " + score;
     }
