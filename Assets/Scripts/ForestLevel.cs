@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ForestLevel : MonoBehaviour
 {
+    private Canvas CanvasObject;
+    public void Start()
+    {
+        CanvasObject = GameObject.Find("TUTORIALS").GetComponent<Canvas>();
+        CanvasObject.GetComponent<Canvas>().enabled = false;
+    }
     // Start is called before the first frame update
     public void ForestPlay()
     {
@@ -15,6 +21,19 @@ public class ForestLevel : MonoBehaviour
     {
         // SceneManager.LoadScene(scenePaths[0], LoadSceneMode.Single);
         SceneManager.LoadScene("Underwater");
+    }
+    public void Tutorials()
+    {
+        if (CanvasObject.enabled == true)
+        {
+            CanvasObject.GetComponent<Canvas>().enabled = false;
+            //MainMenuCanvas.GetComponent<Canvas>().enabled = true;
+        }
+        else
+        {
+            CanvasObject.GetComponent<Canvas>().enabled = true;
+            //MainMenuCanvas.GetComponent<Canvas>().enabled = false;
+        }
     }
     public void QuitPlay ()
     {
