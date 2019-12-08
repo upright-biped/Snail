@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Underwater_player_movement : MonoBehaviour
+public class underwater_player_movement : MonoBehaviour
 {
     public float speed = 7.0f;
     public float jumpSpeed = 9.0f;
