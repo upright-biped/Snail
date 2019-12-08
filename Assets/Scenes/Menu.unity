@@ -1366,20 +1366,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Esc - quit
-
-    WASD/arrows - move
-
-    Spacebar - jump
-
-    Click - catch
-
-    Left click inventory - release
-
-    Right click inventory - delete
-
-
-    Discover all the species! Be careful what you eat and don''t get shocked!'
+  m_Text: "Esc - quit\nWASD/arrows - move\nSpacebar - jump\nClick - catch\nLeft click
+    inventory - release\nRight click inventory - delete\n\nDiscover all the species!
+    \nBe careful what you eat and \ndon't get shocked by the skate!"
 --- !u!222 &1310247919
 CanvasRenderer:
   m_ObjectHideFlags: 0

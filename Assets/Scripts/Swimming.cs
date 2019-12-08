@@ -34,7 +34,7 @@ public class Swimming : MonoBehaviour
         
         xPoint = Random.Range(player.transform.position.x - 20, player.transform.position.x + 20);
         zPoint = Random.Range(player.transform.position.z - 20, player.transform.position.z + 20);
-        newLocation = new Vector3(xPoint, height, zPoint);
+        newLocation = new Vector3(xPoint, 2, zPoint);
     }
 
     void Update()

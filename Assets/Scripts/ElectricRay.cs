@@ -41,12 +41,6 @@ public class ElectricRay : MonoBehaviour
             collided = false;
         }
         transform.position = Vector3.MoveTowards(transform.position, newLocation, speed);
-        //tilting to look like crawling, and facing player
-        if (transform.localEulerAngles.z > 10 || transform.localEulerAngles.z < -30)
-        { zTilt *= (-1); }
-        xTilt = GameObject.Find("SpawnCenter").transform.eulerAngles.x - transform.eulerAngles.x;
-        yTilt = GameObject.Find("SpawnCenter").transform.eulerAngles.y - transform.eulerAngles.y;
-        transform.Rotate(xTilt, yTilt, zTilt, Space.Self);
 
         //flipping depending on if going to players right or left
         if (Vector3.SignedAngle(player.transform.position, transform.position - newLocation, Vector3.up) < 0)
