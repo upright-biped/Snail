@@ -18,7 +18,6 @@ public class Slot : MonoBehaviour
 
         //when moused over, show text
         //when left clicked, release
-
         //when right clicked, delete
     }
 
