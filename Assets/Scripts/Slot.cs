@@ -14,9 +14,20 @@ public class Slot : MonoBehaviour
 //Alex Murray
     void Start()
     {
+<<<<<<< HEAD
         Icon = GameObject.Find(this.name+"/icon").GetComponent<Image>();
         Count = GameObject.Find(this.name + "/count").GetComponent<Text>();
         Name = GameObject.Find(this.name + "/Text").GetComponent<Text>();
+=======
+        Icon = GameObject.Find(this.name+"/icon");
+        Count = GameObject.Find(this.name + "/count");
+        Name = GameObject.Find(this.name + "/Text");
+
+
+        //when moused over, show text
+        //when left clicked, release
+        //when right clicked, delete
+>>>>>>> ba747fa7a8d0112468da3d5e23680b989c96c2bc
     }
     public void Caught()
     {
