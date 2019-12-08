@@ -25,6 +25,10 @@ public class Slot : MonoBehaviour
     public void Caught()
     {
         //revert image colors
+        if (Icon.GetComponent<Image>().color == Color.blue)
+        {
+            GameObject.Find("Score").GetComponent<Score>().AddSpecies();
+        }
         Icon.GetComponent<Image>().color = Color.white;
 
         //Count.GetComponent<Text>().text = int.Parse(Count.GetComponent<Text>().text);
