@@ -21,7 +21,7 @@ public class Swimming : MonoBehaviour
     float yPoint;
     float zPoint;
     public Vector3 newLocation;
-//Alex Murray
+//Rachel Murray
     void Start()
     {
         score = GameObject.Find("Score");
