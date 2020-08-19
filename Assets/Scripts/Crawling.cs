@@ -18,7 +18,7 @@ public class Crawling : MonoBehaviour
     public Vector3 newLocation;
     bool stop = false;
     bool collided = false;
-//Alex Murray
+//Rachel Murray
     void Start()
     {
         score = GameObject.Find("Score");
