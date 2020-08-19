@@ -14,7 +14,7 @@ public class Spawning : MonoBehaviour
     float yPoint;
     float zPoint;
     Vector3 spawnPosition;
-//Alex Murray
+//Rachel Murray
     void Start()
     {
         StartCoroutine(WaitSpawner());
